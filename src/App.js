@@ -1,21 +1,14 @@
-
+import { EditorProvider } from "./context/Editor";
+import Sidebar from "./components/Sidebar";
+import MainContainer from "./components/MainContainer";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EditorProvider>
+      <div className="App">
+        <Sidebar></Sidebar>
+        <MainContainer></MainContainer>
+      </div>
+    </EditorProvider>
   );
 }
 

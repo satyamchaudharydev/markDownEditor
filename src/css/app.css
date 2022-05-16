@@ -1,0 +1,180 @@
+.main-container {
+  overflow: auto;
+  transition: margin 0.3s ease-in-out;
+}
+dialog {
+  width: 45ch;
+  font-family: "Roboto Slab", serif;
+  padding: 1.6em;
+  border-radius: 4px;
+  border: none;
+}
+dialog > * + * {
+  margin-block-start: var(--space, 0.8em);
+}
+dialog > button {
+  padding: 0.7em;
+  text-align: center;
+  width: 100%;
+  padding-inline: 1em;
+  color: #fff;
+  background: #f39765;
+  border-radius: 4px;
+}
+.dialog__content {
+  line-height: 24px;
+}
+.dialog__title {
+  font-size: 1.3em;
+}
+/*  */
+dialog::backdrop {
+  background: #151619;
+  opacity: 0.5;
+}
+/*  */
+/* navigation */
+nav {
+  --gap: 1.5rem;
+  padding-inline-end: 2em;
+  color: var(--clr-white);
+  height: var(--nav-height, 4rem);
+  background-color: var(--clr-1000);
+  align-items: center;
+}
+
+.menu {
+  align-self: stretch;
+  padding-inline: 1em;
+  background: var(--clr-700);
+  align-items: center;
+}
+.doc-info {
+  align-items: center;
+  border-left: 1px solid var(--clr-600);
+  padding-left: 1rem;
+}
+.doc-name__label {
+  color: var(--clr-500);
+  font-weight: lighter;
+  line-height: 17.58px;
+  font-size: var(--fs-200);
+}
+
+.doc-name__text {
+  font-size: var(--fs-500);
+}
+.nav-action-btns {
+  margin-left: auto;
+  align-items: center;
+}
+.dlt-btn {
+  color: var(--clr-500);
+}
+.save-btn {
+  gap: 0.6rem;
+  font-weight: 400;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  background-color: var(--orange);
+}
+
+/*  */
+aside {
+  position: fixed;
+  background-color: var(--clr-1000);
+  height: 100vh;
+  padding: 1.2em;
+  width: var(--sidebar-width, 20rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+aside.open {
+  transform: translateX(0%);
+}
+
+/*  */
+/* main */
+.editor-container {
+  /* padding-bottom: 1em; */
+  height: calc(var(--doc-height));
+  /* height: calc(var(--doc-height) - 42px); */
+  overflow: hidden;
+  font-family: "Roboto Slab", serif;
+  gap: 0px;
+}
+
+.editor-container section {
+  padding-bottom: 1em;
+  flex-basis: 100%;
+}
+.editor-container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: var(--clr-500);
+  background-color: var(--clr-200);
+  height: var(--header-height);
+}
+.editor-container textarea {
+  resize: none;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.texting,
+.result {
+  overflow: scroll;
+  height: calc(100vh - var(--header-height) + var(--nav-height));
+  padding: 1rem;
+}
+.spliter {
+  width: 0.4em;
+  height: var(--doc-height);
+  background-color: var(--clr-300);
+  cursor: row-resize;
+}
+
+/* editors md-elms styling */
+.editor-container blockquote {
+  margin-inline: 0;
+  font-weight: 700;
+  border-left: 4px solid var(--orange);
+  background-color: var(--clr-200);
+  padding: 1.8rem;
+  font-size: var(--fs-300);
+  line-height: 24px;
+  padding-inline: 1.5rem;
+  border-radius: 4px;
+}
+
+.preview p:not(blockquote p),
+.preview li {
+  color: var(--clr-500);
+  font-size: var(--fs-300);
+  line-height: 24px;
+}
+ul li::marker {
+  color: var(--orange);
+}
+/* end styling */
+/* sidebar stylin */
+.sidebar {
+  --space: 1.5em;
+  color: #fff;
+}
+.doc-list {
+  --space: 0.9em;
+}
+/* === todo doc-item-info */
+.doc-item__date {
+  font-weight: 300;
+  font-size: var(--fs-200);
+}
+
+/* end */
